@@ -37,7 +37,7 @@ func main() {
 		log.Fatal(err)
 	}
 	
-	log.Fatal(result)
+	log.Println(result)
 	
 	// 获取指定设备的状态
 	result, err = c.GetDeviceState(sn)
@@ -46,7 +46,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	log.Fatal(result)
+	log.Println(result)
 	
 }
 
