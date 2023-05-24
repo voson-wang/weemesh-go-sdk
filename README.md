@@ -1,4 +1,4 @@
-# github.com/winstar-smart/weemesh-go-sdk
+# [weemesh/weemesh-go-sdk](https://github.com/weemesh/weemesh-go-sdk)
 
 微麦石物联网平台SDK
 
@@ -14,7 +14,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/winstar-smart/weemesh-go-sdk"
+	"github.com/weemesh/weemesh-go-sdk"
 	"log"
 )
 
