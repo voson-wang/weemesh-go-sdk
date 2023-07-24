@@ -31,3 +31,18 @@ func (s *DeviceManagementSuite) TestGetDeviceState(c *C) {
 
 	c.Assert(result.Code, Equals, http.StatusOK)
 }
+
+func (s *DeviceManagementSuite) TestGetDeviceLatestProperty(c *C) {
+	if *addr == "" || *accessKey == "" || *accessSecret == "" || *sn == "" {
+		c.Skip("参数不完整")
+	}
+
+	client := NewClient(*accessKey, *accessSecret, *addr)
+
+	result, err := client.GetDeviceLatestProperty(*sn)
+	if err != nil {
+		c.Fatal(err)
+	}
+
+	c.Assert(result.Code, Equals, http.StatusOK)
+}
