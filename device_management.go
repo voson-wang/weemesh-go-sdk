@@ -18,11 +18,20 @@ func (c *Client) GetDeviceState(sn string) (*CommonResult[bool], error) {
 	return newRequest[bool](request, c)
 }
 
-func (c *Client) GetDeviceLatestProperty(sn string) (*CommonResult[any], error) {
+func (c *Client) GetDeviceLatestProperty(sn string) (*CommonResult[map[string]interface{}], error) {
 	request, err := http.NewRequest(http.MethodGet, c.address+"/"+APIVersion+"/device/"+sn+"/latestProperty", nil)
 	if err != nil {
 		return nil, err
 	}
 
-	return newRequest[any](request, c)
+	return newRequest[map[string]interface{}](request, c)
+}
+
+func (c *Client) GetDevice(sn string) (*CommonResult[map[string]interface{}], error) {
+	request, err := http.NewRequest(http.MethodGet, c.address+"/"+APIVersion+"/device/"+sn, nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return newRequest[map[string]interface{}](request, c)
 }
